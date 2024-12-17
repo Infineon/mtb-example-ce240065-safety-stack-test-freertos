@@ -81,7 +81,7 @@ extern TaskStatus_t xUsrBtnTaskDetails;
  * Function prototype
  ******************************************************************************/
 void user_button_task(void* param);
-stack_test_error_t stack_memory_test(TaskStatus_t task_details, uint16_t stack_len);
+stack_test_error_t stack_memory_test(TaskStatus_t task_details);
 
 #endif /* SOURCE_SUSER_BUTTON_TASK_H_ */
 

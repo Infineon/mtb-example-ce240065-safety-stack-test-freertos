@@ -5,11 +5,11 @@ This code example demonstrates the use of the Class-B Safety Test Library to tes
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-ce240065-safety-stack-test-freertos)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyNDAwNjUiLCJTcGVjIE51bWJlciI6IjAwMi00MDA2NSIsIkRvYyBUaXRsZSI6IkNsYXNzLUIgU2FmZXR5IFRlc3Q6IFN0YWNrIHRlc3QgKEZyZWVSVE9TKSIsInJpZCI6InNkYWsiLCJEb2MgdmVyc2lvbiI6IjEuMC4wIiwiRG9jIExhbmd1YWdlIjoiRW5nbGlzaCIsIkRvYyBEaXZpc2lvbiI6Ik1DRCIsIkRvYyBCVSI6IklDVyIsIkRvYyBGYW1pbHkiOiJQU09DIn0=)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyNDAwNjUiLCJTcGVjIE51bWJlciI6IjAwMi00MDA2NSIsIkRvYyBUaXRsZSI6IkNsYXNzLUIgU2FmZXR5IFRlc3Q6IFN0YWNrIHRlc3QgKEZyZWVSVE9TKSIsInJpZCI6InNkYWsiLCJEb2MgdmVyc2lvbiI6IjEuMS4wIiwiRG9jIExhbmd1YWdlIjoiRW5nbGlzaCIsIkRvYyBEaXZpc2lvbiI6Ik1DRCIsIkRvYyBCVSI6IklDVyIsIkRvYyBGYW1pbHkiOiJQU09DIn0=)
 
 ## Requirements
 
-- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.2 or later (tested with v3.2)
+- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.3 or later (tested with v3.3)
 - Board support package (BSP) minimum required version: v4.2.0
 - Programming language: C
 - Associated parts: [PSoC&trade; 6 MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/psoc-6-32-bit-arm-cortex-m4-mcu), [XMC7000 MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-industrial-microcontroller-based-on-arm-cortex-m)
@@ -18,6 +18,8 @@ This code example demonstrates the use of the Class-B Safety Test Library to tes
 ## Supported toolchains (make variable 'TOOLCHAIN')
 
 - GNU Arm&reg; Embedded Compiler v11.3.1 (`GCC_ARM`) – Default value of `TOOLCHAIN`
+- Arm® Compiler v6.22 (`ARM`)
+- IAR C/C++ Compiler v9.50.2 (`IAR`)
 
 
 ## Supported kits (make variable 'TARGET')
@@ -187,7 +189,7 @@ If using a PSoC&trade; 64 "Secure" MCU kit (like CY8CKIT-064B0S2-4343W), the PSo
       ```
    </details>
 
-4. After programming, the application starts automatically. Confirm that **CAT1 class-B safety test: stack memory test FreeRTOS** is displayed on the UART terminal.
+4. After programming, the application starts automatically. Confirm that **Class-B safety test: stack memory test FreeRTOS** is displayed on the UART terminal.
 
    **Figure 1. Terminal output on program startup**
 
@@ -271,6 +273,7 @@ Document title: *CE240065* - *Class-B Safety Test: Stack test (FreeRTOS)*
  Version | Description of change
  ------- | ---------------------
  1.0.0   | New code example
+ 1.1.0   | Added support for IAR and ARM compiler
 <br>
 
 

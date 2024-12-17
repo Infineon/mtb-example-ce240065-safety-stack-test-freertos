@@ -111,8 +111,7 @@ void user_button_task(void* param)
                     pdTRUE,eInvalid);
 
             /* Perform self test on the stack of led_task */
-            if (SUCCESS == stack_memory_test(xLedTaskDetails,
-                    LED_TASK_STACK_SIZE))
+            if (SUCCESS == stack_memory_test(xLedTaskDetails))
             {
 
                 /* Block until a count val has been sent to queue */
@@ -185,12 +184,11 @@ static void gpio_interrupt_handler(void *handler_arg, cyhal_gpio_event_t event)
 *
 * Parameters:
 *  TaskStatus_t task_details - Handler to store the state of the task
-*  uint16_t stack_len - depth of the stack
 *
 * Return:
 *  stack_test_error_t - result of memory test
 *****************************************************************************/
-stack_test_error_t stack_memory_test(TaskStatus_t task_details, uint16_t stack_len)
+stack_test_error_t stack_memory_test(TaskStatus_t task_details)
 {
     printf("\r\nRunning SelfTest for Task%d - %s \r\n",
             (int)task_details.xTaskNumber,task_details.pcTaskName);
@@ -199,11 +197,11 @@ stack_test_error_t stack_memory_test(TaskStatus_t task_details, uint16_t stack_l
 
     /* Init Stack SelfTest */
     SelfTests_Init_Stack_Range((uint16_t*)task_details.pxStackBase,
-            stack_len,PATTERN_BLOCK_SIZE);
+            task_details.usStackHighWaterMark,PATTERN_BLOCK_SIZE);
 
     /* Run Stack Self Test.      */
     uint8_t ret = SelfTests_Stack_Check_Range((uint16_t*)task_details.pxStackBase,
-            stack_len);
+            task_details.usStackHighWaterMark);
     if ((ERROR_STACK_OVERFLOW & ret))
     {
          /* Process error */

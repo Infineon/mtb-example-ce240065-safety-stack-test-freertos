@@ -57,7 +57,7 @@
  * Macros
  ******************************************************************************/
 /* Stack sizes of user tasks in this project */
-#define LED_TASK_STACK_SIZE (configMINIMAL_STACK_SIZE)
+#define LED_TASK_STACK_SIZE (2 * configMINIMAL_STACK_SIZE)
 
 /*******************************************************************************
 * Global constants
